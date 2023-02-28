@@ -1,0 +1,23 @@
+.gallery {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.error {
+  font-size: 20px;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: hsl(0, 100%, 70%);
+  text-align: center;
+}
