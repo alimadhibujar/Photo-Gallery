@@ -5,4 +5,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: clamp(0.6rem, 0.5rem + 0.7vw, 1rem);
 }
