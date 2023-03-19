@@ -13,9 +13,9 @@
 }
 .toggle-switch {
   display: inline-block;
-  background: hsl(0, 0%, 75%);
+  background: hsl(0, 0%, 57%);
   border-radius: 16px;
-  color: #777;
+  color: hsl(0, 0%, 75%);
   width: 58px;
   height: 28px;
   position: relative;
@@ -27,10 +27,9 @@
   font-family: "Font Awesome 5 Free";
   content: "\f00d";
   font-weight: 900;
-  left: 37px;
+  left: 38px;
   top: 2px;
   position: relative;
-  opacity: 0.5;
 }
 .toggle-switch:before {
   content: "";
@@ -50,11 +49,11 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .toggle-checkbox:checked + .toggle-switch {
-  background: #777;
+  background: hsl(0, 0%, 75%);
   font-size: 0px;
 }
 .toggle-checkbox:checked + .toggle-switch:before {
-  left: 30px;
+  left: 31px;
 }
 
 .toggle-checkbox {
