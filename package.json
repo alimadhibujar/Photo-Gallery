@@ -1,6 +1,6 @@
 {
-  "homepage": "http://alimadhibujar.github.io/React-Gallery",
-  "name": "gallery",
+  "homepage": "http://alimadhibujar.github.io/Photo-Gallery",
+  "name": "react-gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
