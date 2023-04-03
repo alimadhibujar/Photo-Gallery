@@ -1,4 +1,3 @@
 # Photo-Gallery
 A React Gallery
-<!-- [Front-End Developer Interview.pdf](https://github.com/alimadhibujar/Photo-Gallery/files/11133174/Front-End.Developer.Interview.pdf) -->
-<a target=href="_blank" https://github.com/alimadhibujar/Photo-Gallery/files/11133174/Front-End.Developer.Interview.pdf>Front-End Developer Interview.pdf</a>
+[Front-End Developer Interview.pdf](https://github.com/alimadhibujar/Photo-Gallery/files/11133174/Front-End.Developer.Interview.pdf) 
