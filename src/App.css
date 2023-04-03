@@ -1,9 +1,35 @@
 .App {
-  max-width: 750px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: clamp(0.6rem, 0.5rem + 0.7vw, 1rem);
+}
+.githubIcon {
+  font-size: 1.5rem;
+  color: hsl(211, 44%, 75%);
+  text-shadow: 1px 1px 0 hsl(0, 0%, 36%);
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+.githubIcon i {
+  font-size: 2.5rem;
+  color: hsl(211, 44%, 75%);
+  border-radius: 50%;
+  animation: waveyButtons 1.5s infinite linear;
+}
+.githubIcon i:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+  color: hsl(211, 44%, 65%);
+}
+@keyframes waveyButtons {
+  0% {
+    box-shadow: 0 0 0 0 hsla(0, 0%, 55%, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 2rem transparent;
+  }
 }
