@@ -32,7 +32,7 @@ const Gallery = () => {
           setIsError(true);
           setMessage(`There was an error, ${error}`);
         });
-    }, 3000);
+    }, 2000);
   };
 
   const fetchMore = () => {
