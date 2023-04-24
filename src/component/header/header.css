@@ -27,8 +27,8 @@
   font-family: "Font Awesome 5 Free";
   content: "\f00d";
   font-weight: 900;
-  left: 38px;
-  top: 2px;
+  left: 40px;
+  top: 3px;
   position: relative;
 }
 .toggle-switch:before {
@@ -83,4 +83,16 @@
   color: #f1f1f1;
   border-radius: 5px;
   border: none;
+}
+@media (max-width: 500px) {
+  .toggle-switch:after {
+    left: 42px;
+    top: 5px;
+  }
+  .btn .fetch-button {
+    font-size: 12px;
+  }
+  .btn {
+    width: 120px;
+  }
 }

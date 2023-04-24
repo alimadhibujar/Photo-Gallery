@@ -3,59 +3,63 @@ import Photo from "../photo/Photo.jsx";
 import SkeletonLoading from "../skeletonLoading/SkeletonLoading.jsx";
 import "./gallery.css";
 import Header from "../header/Header.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 
 const Gallery = () => {
   const [imageList, setImageList] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [isError, setIsError] = useState(false);
-  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(null);
   const [shouldFetchMorePhotos, setShouldFetchMorePhotos] = useState(false);
 
   const url = "https://picsum.photos/v2/list";
 
-  const fetchImages = (page, track) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      fetch(`${url}?page=${page}&limit=4`)
-        .then((response) => response.json())
-        .then((data) => {
+  const fetchImages = useCallback(
+    async (page, track) => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`${url}?page=${page}&limit=4`);
+        const data = await response.json();
+        setTimeout(() => {
           data && track
             ? setImageList(data)
             : setImageList([...imageList, ...data]);
           setPage((prev) => prev + 1);
           setIsLoading(false);
-        })
-        .catch((error) => {
-          setIsError(true);
-          setMessage(`There was an error, ${error}`);
-        });
-    }, 2000);
-  };
+        }, 2000);
+      } catch (error) {
+        setIsError(`There was an error, ${error}`);
+      }
+    },
+    [imageList]
+  );
 
-  const fetchMore = () => {
-    setShouldFetchMorePhotos(!shouldFetchMorePhotos);
-  };
+  const fetchMore = useCallback(() => {
+    setShouldFetchMorePhotos((shouldFetchMorePhotos) => !shouldFetchMorePhotos);
+  }, []);
 
   useEffect(() => {
     fetchImages(page);
   }, [shouldFetchMorePhotos]);
 
-  const checkHandler = () => {
-    setIsChecked(!isChecked);
-  };
+  const checkHandler = useCallback(() => {
+    setIsChecked((isChecked) => !isChecked);
+  }, []);
 
-  const image = imageList.map(({ download_url, author, id, url }) => (
-    <Photo
-      key={id}
-      src={download_url}
-      author={author}
-      isChecked={isChecked}
-      url={url}
-    />
-  ));
+  const image = useMemo(
+    () =>
+      imageList.map(({ download_url, author, id, url }) => (
+        <Photo
+          key={id}
+          src={download_url}
+          author={author}
+          isChecked={isChecked}
+          url={url}
+        />
+      )),
+    [imageList, isChecked]
+  );
 
   return !isError ? (
     <main className="gallery">
@@ -69,7 +73,7 @@ const Gallery = () => {
           <>
             <section className="photo-gallery">
               {image}
-              <SkeletonLoading />
+              {<SkeletonLoading />}
             </section>
           </>
         ) : (
@@ -81,7 +85,7 @@ const Gallery = () => {
       </div>
     </main>
   ) : (
-    <div className="error">{message}</div>
+    <div className="error">{isError}</div>
   );
 };
 
