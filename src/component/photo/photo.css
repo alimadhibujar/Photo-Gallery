@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  overflow-wrap: break-word;
 }
 
 @media (max-width: 500px) {
@@ -29,6 +28,7 @@
     font-size: 12px;
     height: 40%;
     padding-left: 10px;
+    overflow-wrap: break-word;
   }
 }
 

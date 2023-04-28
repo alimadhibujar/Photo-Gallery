@@ -28,7 +28,7 @@
   content: "\f00d";
   font-weight: 900;
   left: 40px;
-  top: 3px;
+  top: 2px;
   position: relative;
 }
 .toggle-switch:before {

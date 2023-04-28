@@ -17,8 +17,8 @@
   -webkit-animation: shine 1s ease infinite;
   animation: shine 1s ease infinite;
 }
-.caption {
-  box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.15);
+.skeleton .caption {
+  box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.15);
 }
 
 .text {
