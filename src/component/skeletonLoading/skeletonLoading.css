@@ -18,14 +18,16 @@
   animation: shine 1s ease infinite;
 }
 .skeleton .caption {
-  box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .text {
   width: 33%;
   height: 0.75rem;
-  box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
+  box-shadow: rgba(60, 64, 67, 0.2) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 @media (max-width: 500px) {
